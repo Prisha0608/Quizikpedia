@@ -1,0 +1,278 @@
+/* styles.css */
+body {
+    background-image: url(bg.jpg);
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.card {
+    margin: auto;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-primary {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+}
+
+.quiz-container {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0.3s ease;
+    display: block
+}
+#hint-box {
+    max-height: 100px; /* Restrict the height */
+    overflow-y: auto; /* Enable scrolling for larger content */
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Dark text */
+    font-size: 0.9rem; /* Smaller font size */
+    display: none; /* Start hidden */
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+#hint-button {
+    font-size: 1.5rem; /* Adjust the icon size */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%; /* Make it circular */
+    background-color: #17a2b8; /* Bootstrap info color */
+    border: none;
+    color: white;
+}
+
+#hint-button:hover {
+    background-color: #138496; /* Darker shade on hover */
+}
+
+
+.quiz-container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+#question {
+    font-family: 'Georgia', serif !important;
+    font-size: 1.5rem !important;
+    color: #333 !important;
+}
+
+
+h1 {
+    color: #4a4a4a;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.question-container {
+    font-family: Tahoma, Verdana, sans-serif;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    color: #333;
+    position: relative;
+    animation: slideIn 0.5s ease;
+}
+
+.options {
+    text-align: left;
+    margin: 2px 0;
+    perspective: 1000px;
+}
+
+label {
+    border-radius: 10px;
+    font-size: 1em;
+    display: flex;
+    background: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    align-items: center;
+}
+
+label:hover {
+    background-color: #007BFF;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    font-family: Tahoma, sans-serif;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    background-color: #4CAF50;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+#submit a {
+    text-decoration: none;
+    color: black;
+}
+
+.result-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#result-container {
+    background-color: #ffffff;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Heading style */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.score-message,
+.score,
+.score-details {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.score {
+    font-size: 2.5em;
+    color: #4CAF50;
+    animation: pop 0.6s ease-in-out;
+}
+
+.score-details {
+    font-style: italic;
+    color: #555;
+}
+
+/* Retry button */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Pop animation for the score */
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

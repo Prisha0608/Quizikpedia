@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz application website using bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+  <style>
+    .navbar-brand {
+      font-size: 1.5rem;
+      /* Adjust the brand size */
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1.2rem;
+      /* Adjust link size */
+    }
+
+    .navbar-nav .dropdown-menu .dropdown-item {
+      font-size: 1rem;
+      /* Adjust dropdown items size */
+    }
+
+    .navbar-nav .btn {
+      font-size: 1.1rem;
+      /* Adjust button text size */
+    }
+    /* Default styles */
+#password-requirements {
+  color: black;
+  font-size: 14px;
+  margin-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+  <body data-bs-spy="scroll" data-bs-target="#navbarSupportedContent" data-bs-offset="50" tabindex="0">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Quizikpedia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/1st.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/1st.html" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Topics
+              </a>
+              <ul class="dropdown-menu">
+                <!-- All options link to the same section with ID 'topics' -->
+                <li><a class="dropdown-item" href="#topics">HTML</a></li>
+                <li><a class="dropdown-item" href="#topics">CSS</a></li>
+                <li><a class="dropdown-item" href="#topics">JavaScript</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#signupModal"> <i
+                  class="fas fa-user"></i> Sign Up</a></button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#loginModal"> <i
+                  class="fas fa-sign-in-alt"></i> Login
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!--login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">Login To Quizikpedia</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="login-container">
+              <!-- <h2>Login</h2> -->
+              <form id="loginForm">
+                <div class="input-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+              </form>
+              <p class="signup-link">Don't have an account?
+                <a href="#" onclick="switchToSignUp()">Sign Up</a>
+              </p>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="signupModalLabel">Get a Quizikpedia Account</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="signup-container">
+              <!-- <h2>Sign Up</h2> -->
+              <form id="signupForm">
+                <div class="input-group">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email_id" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="newPassword" name="password" placeholder="Create a password" required>
+                  <small id="password-requirements" class="form-text">
+                    Password must be at least 8 characters long, contain at least one number and one special character.
+                  </small>
+      
+                </div>
+
+                
+                <div class="input-group">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
+                    required>
+                </div>
+                <div class="options">
+                  <label>
+                    <input type="checkbox" id="terms" required> I agree to the <a href="#">Terms and Conditions</a>
+                  </label>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+              </form>
+              <p class="login-link">Already have an account?
+                <a href="#" onclick="switchToLogin()">Login</a>
+              </p>
+
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="quiz1.jpeg" width="1400" height="500" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <p style="color:rgb(243, 247, 246); font-size: 45px; text-shadow: 4px 4px 4px #2263c4;">Welcome to
+              Quizikpedia </h1>
+            <p style="font-size: 25px ;">Where Curiosity Meets Competition </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="DALL·E 2024-10-28 14.42.42 - A dark-themed background for a coding quiz website, featuring subtle, abstract icons related to coding like code brackets, keyboards, computer screens.webp"
+            width="1400" height="500" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="online-4208112_1280.jpg" width="1400" height="500" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
+
+    <!-- Card Section with single ID for ScrollSpy -->
+    <div class="container integ mt-5" id="topics">
+      <h2 class="integ__subheading">Topics</h2>
+      <h4 class="integ__heading">Quizzes for different courses</h4>
+      <div class="integ__container">
+        <!-- HTML5 Card -->
+        <div class="cont__card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <img src="html5-3384014_1280.png" height="180px" width="100%">
+          <div class="card-body c_body">
+            <h5 class="card-title">HTML5</h5>
+            <p class="card-text">HTML5 is the latest evolution of the standard that defines HTML. It introduces new
+              elements, attributes.</p>
+            <a href="instructions.html" class="btn btn-primary mb-2">Start quiz!</a>
+          </div>
+        </div>
+        <!-- CSS3 Card -->
+        <div class="cont__card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <img src="css.png" height="180px" width="100%">
+          <div class="card-body c_body">
+            <h5 class="card-title">CSS3</h5>
+            <p class="card-text">CSS3 is the latest version of the Cascading Style Sheets language, bringing enhanced
+              features like animations.</p>
+            <a href="instruction1.html" class="btn btn-primary mb-2">Start quiz!</a>
+          </div>
+        </div>
+        <!-- JavaScript Card -->
+        <div class="cont__card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <img src="javascript.png" height="180px" width="100%">
+          <div class="card-body c_body">
+            <h5 class="card-title">JavaScript</h5>
+            <p class="card-text">JavaScript is a powerful programming language that enables interactive and innovative
+              web experiences.</p>
+            <a href="instruction2.html" class="btn btn-primary mb-2">Start quiz!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- newsletter -->
+    <div class="newsletter">
+      <div class="newsletter__img"></div>
+      <div class="newsletter__form ">
+        <h6>Get NewsLetter</h6>
+        <h3>
+          Get every weekly updates feeds
+        </h3>
+        <div class="mt-5  row">
+
+          <div class="col-sm-10">
+            <input type="text" class="form-control ps-4 py-2 fs-6 text-secondary fw-4 " id="name" placeholder="Enter full name">
+          </div>
+        </div>
+        <div class="mt-3  row">
+
+          <div class="col-sm-10">
+            <input type="email" class="form-control ps-4  py-2 fs-6 text-secondary fw-4 "
+              placeholder="Enter email address" id="personalEmail">
+          </div>
+
+        </div>
+        <button class="btn btn-dark mt-3 px-3 mx-6 " id="subscribeButton" onclick="subcribeMe()">Subscribe me</button>
+      </div>
+    </div>
+
+    <!-- testimonials -->
+    <div class="testi">
+      <h6 class="testi__subheading">Testimonials</h6>
+      <h4 class="testi__heading">Our Users Feedbacks</h4>
+      <div class="testi__container">
+        <div class="tcon__card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>"I love how easy it is to navigate through the quizzes. The timer and progress bar keep me engaged, and the instant feedback after each question helps me learn on the spot."</p>
+          <br>
+          <h4>John Smith</h4>
+          <h6>Student</h6>
+          <img src="./john.jpg" alt="">
+        </div>
+        <div class="tcon__card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>The interactive features of this app are fantastic! I especially like the real-time feedback and hints for tough questions. It’s a great tool for both learning and entertainment. Keep up the good work!</p>
+          <br>
+          <h4>Sarah</h4>
+          <h6>Student</h6>
+          <img src="./sarah.jpg" alt="">
+
+        </div>
+
+        <div class="tcon__card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>This quiz app is amazing! The design is clean and user-friendly, and I love how engaging the quizzes are. It’s a perfect way to learn something new while having fun. Highly recommend it!</p>
+          <br>
+          <h4>Adam </h4>
+          <h6>Student</h6>
+          <img src="./adam.jpg" alt="">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- footer -->
+<div class="footer">
+  <div class="footer__card">
+    <h4>Main Links</h4>
+    <div class="fcard__div">
+      <div>
+        <h6>About Us</h6>
+      
+        <h6>Contact</h6>
+    
+      </div>
+     
+    </div>
+  </div>
+  <div class="footer__card">
+    <h4>Get In Touch</h4>
+    <br>
+    <address>
+      <h6> New Address</h6>
+      <h6>14/A,New Home Town,Nyc</h6>
+      <h6>Head Quarter</h6>
+       
+      <h6>71,Qlex Tower, Onton,UK</h6>
+    </address>
+  
+    
+    <button class="footer__btn" onclick="location.href='contact.html';" >
+        Contact Us
+    </button>
+  </div>
+  <div class="footer__card">
+    <h4>About</h4><br>
+    <p>Our website provides a platform for users to explore, challenge, and enhance their knowledge through exciting quizzes. Its intuitive design and dynamic features make learning enjoyable and engaging for all ages</p>
+    <br>
+    <h4>Social Contact</h4>
+    <img src="./facebook_icon.png" height="30px" width="30px" class="img-thumbnail footer__icon">
+    <img src="./twitter_icon.png" height="30px" width="30px" class="ms-2 img-thumbnail  footer__icon">
+    <img src="./instagram_icon.png" height="30px" width="30px" class="ms-2 img-thumbnail  footer__icon">
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+      </script>
+
+    <!-- Custom JavaScript -->
+    <script>
+
+    
+    const passwordInput = document.getElementById("newPassword");
+    const requirements = document.getElementById("password-requirements");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+    const signupForm = document.getElementById("signupForm");
+    
+   let userPassword="";
+   let userEmail="";
+
+// Validate password input dynamically
+passwordInput.addEventListener("input", () => {
+
+  const password = passwordInput.value;
+
+  // Regex to validate the password
+  const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+
+
+  // Dynamically toggle classes based on validation
+  if (regex.test(password)) {
+     requirements.style.color="green";
+    
+   
+  } else {
+    // If the password fails validation
+    requirements.style.color="red";
+
+  }
+});
+
+
+    
+
+
+      document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+
+        // Simple validation
+        if (!email || !password) {
+          alert('Please fill in all fields!');
+          return;
+        }
+
+        if(userPassword!=password|| userEmail!=email) {
+          alert("Invalid email or password");
+          return;
+        }
+     
+        // Mock login logic
+       
+          alert(`Logged in with:\nEmail: ${email}\nPassword: ${password}`);
+        const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal')) ||
+          new bootstrap.Modal(document.getElementById('loginModal'));
+          document.getElementById('loginForm').reset();
+        loginModal.hide();
+        
+       
+      });
+      document.getElementById('signupForm').addEventListener('submit', function (event){
+        event.preventDefault(); // Prevent form submission
+
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email_id').value;
+        const password = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const termsAccepted = document.getElementById('terms').checked;
+
+
+// Regex to validate the password
+const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+
+if (!regex.test(password)){
+      alert("Password donot match the given criteria");
+      return;
+}
+
+        // Validate passwords match
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+
+
+        // Mock signup logic
+        if (termsAccepted) {
+          alert(`Account created for:\nName: ${fullName}\nEmail: ${email}`);
+          const signupModal = bootstrap.Modal.getInstance(document.getElementById('signupModal')) ||
+            new bootstrap.Modal(document.getElementById('signupModal'));
+          signupModal.hide();
+          userPassword=password;
+          userEmail=email;
+          requirements.style.color="black";
+          document.getElementById('signupForm').reset();
+        } else {
+          alert('Please accept the terms and conditions!');
+        
+          return;
+        }
+     })
+      function switchToLogin() {
+        // Get the existing Sign Up Modal instance and hide it
+        const signupModal = bootstrap.Modal.getInstance(document.getElementById('signupModal')) ||
+          new bootstrap.Modal(document.getElementById('signupModal'));
+        signupModal.hide();
+
+        // Show the Login Modal
+        const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal')) ||
+          new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.show();
+      }
+
+      function switchToSignUp() {
+        // Get the existing Login Modal instance and hide it
+        const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal')) ||
+          new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.hide();
+
+        // Show the Sign Up Modal
+        const signupModal = bootstrap.Modal.getInstance(document.getElementById('signupModal')) ||
+          new bootstrap.Modal(document.getElementById('signupModal'));
+        signupModal.show();
+      }
+
+      function subcribeMe(){
+        const personalEmail = document.getElementById("personalEmail").value;
+        const fullName=document.getElementById("name").value;
+        if(!personalEmail || !fullName){
+          alert("Enter personal details");
+          return;
+        }
+        alert("Thanks for subscribing");
+      }
+    
+
+
+
+
+    </script>
+  </body>
+
+</html>

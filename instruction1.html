@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Rules</title>
+    <style>
+        body {
+            background-image: url(contact.jpeg);
+            background-size: cover; /* Covers the screen */
+background-position: center; /* Ensures it's centered */
+background-attachment: fixed; /* Optional: makes the background fixed while scrolling */
+ 
+        }
+        .info_box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: azure;
+            z-index: 5;
+            pointer-events: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+        }
+        .info_box .info-title {
+            width: 100%;
+            height: 60px;
+            color: black;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            font-size: 25px;
+            font-weight: 600; 
+        }
+        .info_box .info-list {
+            padding: 15px 30px;
+        }
+        .info_box .info-list .info {
+            margin: 5px 0;
+            font-size: 19px;
+        }
+        .info_box .info-list .info span {
+            font-weight: 600; 
+            color: rgb(13, 13, 245);
+        }
+        .info_box .buttons {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 30px;
+            /* border-top: 1px solid rgb(66, 42, 200); */
+        }
+        .buttons a {
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            background-color: rgb(8, 8, 247);
+            color: rgb(249, 245, 245);
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        .buttons a:hover {
+            background-color: rgb(60, 35, 162);
+            color: white;
+        }
+        @media (max-width: 600px) {
+            body {
+        background-size: contain;
+        background-position: center;
+    }
+            .info_box {
+                width: 90%;
+                padding: 15px;
+            }
+            .info_box .info-title {
+                font-size: 20px;
+            }
+            .info_box .info-list .info {
+                font-size: 14px;
+            }
+            .info_box .buttons a {
+                width: 80px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="info_box">
+        <header class="info-title">Some rules of this quiz</header>
+        <main class="info-list">
+            <p class="info">1. You will have only <span>15</span> seconds for the quiz.</p>
+            <p class="info">2. Once you select your answer, it can't be undone.</p>
+            <p class="info">3. You can't select any option once time goes off.</p>
+            <p class="info">4. You can't exit from the Quiz while you're playing.</p>
+            <p class="info">5. You'll get points on the basis of your correct answers.</p>
+        </main>
+        <div class="buttons">
+            <a href="cssques.html" id="restart" aria-label="Continue to Quiz">Continue</a>
+        </div>
+    </div>
+</body>
+</html>
