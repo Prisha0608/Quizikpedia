@@ -26,3 +26,4 @@ Complete all questions to view your final score.
 
 Check your score and track improvement over time.
 Compete with others via the leaderboard (if enabled).
+
